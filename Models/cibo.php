@@ -8,12 +8,12 @@ class Cibo extends Prodotto{
 
 
     public function __construct(
-        String $immagine,
-        String $nome,
-        Float $prezzo,
+        string $immagine,
+        string $nome,
+        float $prezzo,
         Categorie $category,
-        Float $pesonetto,
-        String $ingredienti
+        float $pesonetto,
+        string $ingredienti
 
         ) {
         $this->pesonetto = $pesonetto;
