@@ -9,6 +9,7 @@
 
     $category = [
         'cane' => new Categorie('cane', 'fa-solid fa-dog'),
+        'uccello' => new Categorie('uccello', 'fa-solid fa-dove'),
         'gatto' => new Categorie('gatto', 'fa-solid fa-cat')
     ];
 
@@ -19,7 +20,7 @@
 
         new Cibo('https://shop-cdn-m.mediazs.com/bilder/almo/nature/holistic/medium/adult/con/manzo/fresco/5/800/68015_pla_almo_nature_holistic_adult_rind_reis_medium_746_12kg_dog_5.jpg', 'Almo Nature', 44.99, $category['cane'], 600, 'manzo, cereali'),
 
-        new Accessori('https://tiragraffi-rufi.it/1933-large_default/tiragraffi-per-gatti-ex-15.jpg', 'Tiragraffi', 79.80, $category['gatto'], 'sisal', 'M: 60L x 40l x 112H cm'),
+        new Accessori('https://static.bighunter.net/foto/1_Def_per_web_zoom/14089/14089.jpg', 'Voliera Ferplast Bella Casa', 184.99, $category['uccello'], 'legno', 'M: L83 x P67 x H153 cm '),
 
         new Giocattoli('https://i.ebayimg.com/images/g/03kAAOSwA4BbK4Gm/s-l500.jpg', 'Topini di Peluche Trixie', 4.99, $category['gatto'], 'Morbido e salutare', '8.5 cm x 10 cm')
     ];
@@ -85,30 +86,85 @@
                 }
             }
             ?>
-            
+              <?php
+
+                    foreach ($prodotti as $element) {
+                        // Prodotto che appartiene alla categoria 'gatto'
+                        if ($element->category->nome == 'gatto') {
+                    ?>
+                    <div class="col-3 mt-3">
+                        <div class="card">
+                            <img class="progress" style="height: 304px;" src="<?php echo $element->immagine ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-uppercase">
+                                    <?php echo $element->nome ?>
+                                </h4>
+                                <h6 class="card-title ">
+                                    <?php echo $element->category->nome ?> 
+                                    <i class="<?php echo $element->category->icona ?>"></i>
+                                </h6>
+                                <h5 class="card-title opacity-75">
+                                    <?php echo $element->prezzo ?> €
+                                </h5>
+                                <p class="card-text opacity-75">
+                                    caratteristiche:
+                                    <?php echo $element->caratteristiche ?>
+                                </p>
+                                <p class="card-text opacity-75">
+                                    Dimensioni:
+                                    <?php echo $element->dimensioni ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+
+                    
+            <?php
+
+                    foreach ($prodotti as $element) {
+                        // Prodotto che appartiene alla categoria 'uccello'
+                        if ($element->category->nome == 'uccello') {
+                    ?>
+                    <div class="col-3 mt-3">
+                        <div class="card">
+                            <img class="progress" style="height: 304px;" src="<?php echo $element->immagine ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title text-uppercase">
+                                    <?php echo $element->nome ?>
+                                </h4>
+                                <h6 class="card-title ">
+                                    <?php echo $element->category->nome ?>
+                                    <i class="<?php echo $element->category->icona ?>"></i>
+                                </h6>
+                                <h5 class="card-title opacity-75">
+                                    <?php echo $element->prezzo ?> €
+                                </h5>
+                                <p class="card-text opacity-75">
+                                    Materiale:
+                                    <?php echo $element->materiale ?>
+                                </p>
+                                <p class="card-text opacity-75">
+                                    Dimensioni:
+                                    <?php echo $element->dimensioni ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+
 
            
             
         </div>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
