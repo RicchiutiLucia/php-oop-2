@@ -16,10 +16,10 @@
             Categorie $category
 
             ) {
-            this->immagine = $immagine;
-            this->nome = $nome;
-            this->prezzo = $prezzo;
-            this->category = $category;      
+            $this->immagine = $immagine;
+            $this->nome = $nome;
+            $this->prezzo = $prezzo;
+            $this->category = $category;      
   }
 
 }

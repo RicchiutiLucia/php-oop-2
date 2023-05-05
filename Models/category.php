@@ -9,8 +9,8 @@ class Categorie{
         string $nome,
         string $icona
     ){
-        this->nome = $nome;
-        this->icona = $icona;
+        $this->nome = $nome;
+        $this->icona = $icona;
     }
 }
 
