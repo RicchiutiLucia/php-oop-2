@@ -22,6 +22,17 @@
             $this->category = $category;      
   }
 
+        public function changePrice($newPrezzo){
+            if(!is_numeric($newPrezzo)){
+                throw new Exception('Il nuovo prezzo non è valido!');
+            }
+            $this->prezzo = $newPrezzo;
+            
+            
+        }
+
+        
+
 }
 
 
